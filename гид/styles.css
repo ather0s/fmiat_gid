@@ -1,0 +1,500 @@
+<style>
+:root{
+  --primary:#3a378d;
+  --secondary:#1f1a75;
+  --accent:#6a5acd;
+  -- -bg: rgba(255,255,255,0.08);
+  --text:#fff;
+  --link:#ffd700;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    color:var(--text);line-height:1.5;
+    scroll-behavior:smooth
+  }
+
+.header{position:relative;height:50vh;display:flex;align-items:center;justify-content:center;overflow:hidden; }
+.header img{top: 0;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;}
+.header h1{z-index:2;font-size:2.4rem;text-align:center;padding:0 10px}
+.section{padding:36px 0}
+
+.nav{
+  position:sticky;top:0;z-index:10;background:rgba(58,55,141,0.7);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,.2);
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.5px}
+.brand .dot{width:10px;height:10px;border-radius:50%;background:var(--accent-2);box-shadow:0 0 16px var(--accent-2)}
+
+/*---------------------------------------------------------------------------------------------------------------------*/
+nav{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 12px;
+  backdrop-filter: blur(8px);
+  background: rgba(58,55,141,0.75);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+nav .tab{
+  appearance: none;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  color: #f2f2f2;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform .15s ease, background .15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+nav .logotipFmiat img{
+  height: 40px;
+  width: auto;
+  display: block;
+}
+nav .tab:hover,
+nav .tab:focus{
+  background: rgba(255,255,255,0.14);
+  transform: translateY(-2px);
+  outline: none;
+}
+nav .tab.active{
+  background: rgba(255,255,255,0.2);
+  box-shadow: 0 4px 18px rgba(58,55,141,0.12);
+}
+
+/* Доступность */
+nav .tab:focus{
+  box-shadow: 0 0 0 3px rgba(58,55,141,0.18);
+  transform: none;
+}
+/*---------------------------------------------------------------------------------------------------------------------*/
+
+
+nav a{
+  color:var(--text);
+  text-decoration:none;
+  padding:8px 12px;
+  border-radius:6px;
+  font-weight:600
+}
+nav a:hover{
+  background:var(--accent)
+}
+/*---------------------------------------------------------------------------------------------------------------------*/
+/*подвал*/
+footer{
+  padding:32px 0 50px;
+  color:var(--muted);
+  text-align:center;
+}
+/*---------------------------------------------------------------------------------------------------------------------*/
+
+/* Общие секции */
+.container{max-width:1000px;margin:50px auto;padding:0 16px}
+
+.card{
+  font-size: 12px;
+  background:var(--card-bg);
+  padding:10px;
+  border-radius:18px;
+  margin-bottom:18px;
+  transition:transform .5s;
+}
+.card:hover{transform:translateY(-6px)}
+
+.cardd{
+  background:var(--card-bg);
+  padding:20px;
+  border-radius:12px;
+  margin-bottom:18px;}
+
+/* Факультет */
+.fac-grid{display:grid;grid-template-columns:1fr;gap:16px}
+
+/* Деканат карточки */
+.staff{display:flex;gap:16px;align-items:center}
+.avatar{
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  overflow:hidden;
+  flex-shrink:0;
+  background:#ddd;
+  box-shadow: 3px 3px 5px 0.5px rgba(0, 0, 0, 0.7)
+}
+
+
+.avatarR{width:100px;
+  height:100px;
+  border-radius:25%;
+  overflow:hidden; 
+  position: relative; 
+  flex-shrink:0;
+  background:#ddd;
+  transition: transform 0.4s;
+  box-shadow: 3px 3px 5px 0.5px rgba(0, 0, 0, 0.7)
+}
+.avatarR:hover { 
+  transform: scale(1.8); 
+}.
+
+
+.staff-info h4{margin:0 0 6px 0;font-size:24px}
+.staff-info p{margin:0;font-size:12px;color:#eaeaff}
+
+/* Кураторы — карусель */
+.carousel-wrap{position:relative}
+.carousel{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:14px 8px;scroll-behavior:smooth}
+.card-cur{
+  width:320px;
+  flex:0 0 auto;
+  background:rgba(255,255,255,0.06);
+  border-radius:25px;
+  padding:8px;
+  scroll-snap-align:center;
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+.card-cur .avatar{
+  width:100px;
+  height:100px
+}
+.cur-meta h4{
+  margin:0;
+  text-size: 4px;
+}
+
+.cur-text{
+  text-size: 100px;
+}
+
+.controls{position:absolute;right:8px;top:8px;display:flex;gap:8px}
+.ctrl-btn{background:rgba(0,0,0,0.25);border:none;color:var(--text);padding:8px;border-radius:6px;cursor:pointer}
+.ctrl-btn:active{transform:scale(.98)}
+.handle{color:#a5f3fc}
+
+
+
+#studfmiat .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px; /* расстояние между карточками */
+  align-items: start;
+}
+#studfmiat .card.person {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+}
+.role{font-weight:800;opacity:.9}
+
+/* Список направлений */
+.directions ul{
+  padding-left:20px
+}
+.directions a{font-size: 14px;color: #f2f2f2;text-decoration:underline;cursor:pointer}
+
+/* Красивые ссылки внутри карточек */
+/*a{color:var(--link)}*/
+a{
+  color: #f2f2f2;
+  text-decoration: none;
+}
+.dir-link{
+  color: #f2f2f2;
+  text-decoration: none;
+}
+
+.socseti img{
+  height: 20px;
+  width: 20px;
+  vertical-align: middle;
+}
+.boxbox{
+  padding: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  min-width: 220px;        /* чтобы не становились слишком узкими */  
+  /*flex: 1 1 0;              /*каждый блок гибкий, одинаковая ширина --- ??? */
+  box-sizing: border-box;
+}
+.rowrow{
+  display: flex;
+  gap: 2px;               /* расстояние между колонками */
+  align-items: flex-start; /* выравнивание по верхнему краю */
+  justify-content: space-between;
+
+  flex-wrap: nowrap;       /* не переносить по умолчанию */
+  padding: 2px;
+}
+  .boxbox {
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+/*---------------------------------------------------------------------------------------------------------------------*/
+/* background:rgba(58,55,141,0.4);*/
+.podval{
+  opacity: 1;
+  background-image:
+    linear-gradient(rgba(58,55,141,1), rgba(58,55,141,0.7)),
+    url("zad.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.footer{
+  padding: 16px 10px 10px;
+  color:var(--muted);
+  text-align:center
+}
+.gridd{
+  display:grid;
+  gap:18px;
+}
+.lead{
+  color:var(--muted);
+  font-size: 200px;
+  max-width:68ch;
+  margin:0 0 24px
+}
+.table{
+  width:100%;
+  border-collapse:collapse
+}
+.table th,.table td{padding:10px 12px;text-align:left;border-bottom:1px dashed rgba(255,255,255,.15)}
+.table th{color:#c7d2fe;font-weight:800}
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.kv{
+  display:grid;
+  grid-template-columns: 1fr auto;
+  gap:10px;
+  align-items:center
+}
+.kv a{color:#f2f2f2;text-decoration:none}
+.kv a:hover{text-decoration:underline}
+.badge{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:999px;
+  background:rgba(139,92,246,.25);
+  border:1px solid rgba(139,92,246,.6);
+  font-weight:700;letter-spacing:.3px
+}
+
+/*---------------------------------------------------------------------------------------------------------------------*/
+.perehod{
+  display:inline-block;
+  padding:10px 10px;
+  border-radius:999px;
+  background:rgba(48, 44, 131,.3);
+  border:1px solid rgba(0,92,246,.2);
+  font-weight:700;
+}
+/*---------------------------------------------------------------------------------------------------------------------*/
+.tab{
+  font-size: 24px;
+  appearance:none;border:none;padding:6px 6px;
+  border-radius:999px;
+  background:rgba(255,255,255,.08);color:var(--white);
+  cursor:pointer;
+  text-decoration:none;
+  font-weight:600;transition:.2s transform background;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.tab:hover{background:rgba(255,255,255,.15);transform:translateY(-1px)}
+/*---------------------------------------------------------------------------------------------------------------------*/
+
+
+  #studfmiat .griddd {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px; /* расстояние между карточками */
+  align-items: start;
+}
+
+/*---------------------------------------------------------------------------------------------------------------------*/
+.telefon{
+  font-size: 15px;
+}
+
+/*---------------------------------------------------------------------------------------------------------------------*/
+.card-cur-personal{
+  min-width:300px;
+  flex:0 0 auto;
+  border-radius:1px;
+  padding:12px;
+  scroll-snap-align:center;
+  display:flex;
+  gap:1px;
+  align-items:center;
+}
+
+.card-cur-personal img{
+  height: 200px;
+  width: 200px;
+}
+
+   .containerR {
+     display: grid;
+     grid-template-columns: repeat(12, 1fr);
+     gap: 16px;
+     max-width: 1200px;
+     margin: 0 auto;
+     padding: 0 16px;
+     box-sizing: border-box;
+   }
+
+.rowrow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 300px;
+}
+   
+
+   .avatarTimyr{
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  overflow:hidden;
+  background:#ddd;
+  box-shadow: 3px 3px 5px 0.5px rgba(0, 0, 0, 0.7)
+}
+.cardTimyr{
+  font-size: 12px;
+  padding:20px;
+  transition:transform .5s;
+  display: grid;
+    place-items: center;
+}
+.cardTimyr img{
+  display: grid;
+  place-items: center;
+}
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* Мобильная адаптация ---------------------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media (min-width: 801px) {
+  .fac-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .grid{display:grid;gap:18px}
+
+  .grid-2{grid-template-columns:1.1fr 1fr}
+
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 800px){ 
+  #studfmiat 
+    .griddd {
+    grid-template-columns: 1fr;
+    gap: 1px;
+  }
+  
+  nav {
+    display: flex; /* Убедитесь, что используется flexbox */
+    align-items: center; /* Вертикальное выравнивание */
+    padding: 8px 12px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 12px; /* Добавьте отступ между элементами */
+  }
+
+  /* Создайте контейнер для кнопок */
+  .nav-buttons {
+    display: flex;
+    justify-content: center; /* Центрируем кнопки */
+    align-items: center;
+    flex-grow: 1; /* Занимаем все доступное пространство между лого и краем */
+  }
+
+  nav .tab {
+    flex: 0 0 auto;
+    padding: 12px 8px;
+    font-size: 12px;
+
+  }
+
+  nav .logotipFmiat img {
+    width: 40px;
+  }
+
+  nav a{
+  padding:1px 14px;
+}
+
+
+#faculty{
+    padding-top: 110px; 
+    margin-top: -110px; 
+}
+#studfmiat{
+    padding-top: 110px;
+    margin-top: -110px;
+}
+#map{
+    padding-top: 110px; 
+    margin-top: -110px; 
+}
+#resources{
+    padding-top: 110px;
+    margin-top: -110px; 
+}
+#ssilki{
+    padding-top: 110px;
+    margin-top: -110px;
+}
+
+
+  body{ padding-top: 60px; }
+
+  .header h1
+    {
+      font-size:1.8rem
+    }
+    #studfmiat 
+    .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rowrow {
+    flex-direction: column; /* важное правило: стек сверху вниз */
+     gap: 1px; 
+  }
+  .perehod{
+    align-items: center;
+  }
+
+ 
+}
+
+}
+</style>

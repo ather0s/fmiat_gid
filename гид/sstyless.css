@@ -1,0 +1,313 @@
+<style>
+:root{
+  --primary:#3a378d;
+  --secondary:#1f1a75;
+  --accent:#6a5acd;
+  -- -bg: rgba(255,255,255,0.08);
+  --text:#fff;
+  --link:#ffd700;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    color:var(--text);line-height:1.5;
+    scroll-behavior:smooth;
+  }
+
+/*---------------------------------------------------------------------------------------------------------------------*/
+
+.nav{
+  position:sticky;top:0;z-index:10;background:rgba(58,55,141,0.7);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,.2);
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.5px}
+.brand .dot{width:10px;height:10px;border-radius:50%;background:var(--accent-2);box-shadow:0 0 16px var(--accent-2)}
+
+/*---------------------------------------------------------------------------------------------------------------------*/
+nav{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 12px;
+  backdrop-filter: blur(8px);
+  background: rgba(58,55,141,0.75);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+nav .tab{
+  appearance: none;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  color: #f2f2f2;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform .15s ease, background .15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+nav .logotipFmiat img{
+  height: 40px;
+  width: auto;
+  display: block;
+}
+nav .tab:hover,
+nav .tab:focus{
+  background: rgba(255,255,255,0.14);
+  transform: translateY(-2px);
+  outline: none;
+}
+nav .tab.active{
+  background: rgba(255,255,255,0.2);
+  box-shadow: 0 4px 18px rgba(58,55,141,0.12);
+}
+/* Адаптация */
+
+/* Доступность */
+nav .tab:focus{
+  box-shadow: 0 0 0 3px rgba(58,55,141,0.18);
+  transform: none;
+}
+/*---------------------------------------------------------------------------------------------------------------------*/
+
+
+nav a{
+  color:var(--text);
+  text-decoration:none;
+  padding:8px 12px;
+  border-radius:6px;
+  font-weight:700
+}
+nav a:hover{
+  background:var(--accent)
+}
+
+
+.header{position:relative;height:50vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.header img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1}
+.header h1{z-index:2;font-size:2.4rem;text-align:center;padding:0 10px}
+.section{padding:36px 0}
+
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.5px}
+.brand .dot{width:10px;height:10px;border-radius:50%;background:var(--accent-2);box-shadow:0 0 16px var(--accent-2)}
+
+/* Общие секции */
+.container{max-width:1000px;margin:50px auto;padding:0 16px}
+.card{background:var(--card-bg);padding:20px;border-radius:20px;margin-bottom:18px;transition:transform .5s;}
+.card:hover{transform:translateY(-6px)}
+
+.cardd{
+  background:var(--card-bg);
+  padding:20px;
+  border-radius:12px;
+  margin-bottom:18px;}
+
+.avatar{width:110px;height:110px;border-radius:50%;overflow:hidden;flex-shrink:0;background:#ddd;border:1px solid rgba(255,255,255,0.01)}
+
+.card-cur-personal{
+  min-width:300px;
+  border-radius:1px;
+  padding:12px;
+  scroll-snap-align:center;
+  display:flex;
+  gap:1px;
+  align-items:center;
+}
+
+.card-cur-personal img{
+  height: 150px;
+  width: 150px;
+}
+
+.containerR {
+  display: flex;
+  flex-wrap: nowrap ;         /* или wrap — если нужно переносить */
+  gap: 2px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.item {
+  flex: 0 0 calc(50% - 8px);
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.footer{
+  padding: 16px 10px 10px;
+  color:var(--muted);
+  text-align:center;
+}
+
+.role{
+  font-weight:  800;
+  opacity:.9;
+  font-style:italic;
+}
+
+.socseti-cur{
+  font-weight:  800;
+  font-size: 20px;
+  opacity:.9;
+  font-style:italic;
+}
+
+
+p{
+  color: white;
+}
+
+.socseti img{
+  height: 25px;
+  width: 25px;
+  vertical-align: middle;
+}
+
+.perehod {
+  display: inline-block;
+  padding: 12px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,1);
+  font-weight: 700;
+  background:rgba(139,92,246,.25);
+
+}
+
+a{
+  color: white;
+  text-decoration: none;
+}
+
+.toptop{
+  align-items: top;
+}
+
+.table{
+  width:100%;
+  border-collapse:collapse;
+  margin: 20px 20px ;
+ }
+.table th,.table td{
+  padding:10px 12px;
+  text-align:left;border-bottom:1px dashed rgba(255,255,255,.15)
+}
+.table th{color:#c7d2fe;font-weight:800}
+.gridd{
+  display:grid;
+  gap:18px;
+}
+
+.perehod{
+  display:inline-block;
+  padding:10px 10px;
+  border-radius:999px;
+  background:rgba(48, 44, 131,.3);
+  border:1px solid rgba(0,92,246,.2);
+  font-weight:700;
+}
+
+@media (min-width: 800px){ 
+
+}
+
+@media (max-width: 800px){ 
+ 
+#studfmiat 
+    .griddd {
+    grid-template-columns: 1fr;
+    gap: 1px;
+  }
+  
+  nav {
+    display: flex; /* Убедитесь, что используется flexbox */
+    align-items: center; /* Вертикальное выравнивание */
+    padding: 8px 12px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 12px; /* Добавьте отступ между элементами */
+  }
+
+  /* Создайте контейнер для кнопок */
+  .nav-buttons {
+    display: flex;
+    justify-content: center; /* Центрируем кнопки */
+    align-items: center;
+    flex-grow: 1; /* Занимаем все доступное пространство между лого и краем */
+  }
+
+  nav .tab {
+    flex: 0 0 auto;
+    padding: 12px 8px;
+    font-size: 12px;
+
+  }
+
+  nav .logotipFmiat img {
+    width: 40px;
+  }
+
+  nav a{
+  padding:1px 14px;
+}
+
+ img{
+  align-items: top;
+ }
+
+ .item{
+  font-size: 10px;
+  gap: 1px;
+  padding: 1px;
+  margin: 1px;
+ }
+ .card{
+  font-size: 9px;
+ }
+.role{
+  font-size: 12px;
+}
+ .cardd{
+  font-size: 10px;
+  gap: 5px;
+  padding: 5px;
+  margin: 5px;
+ }
+ .socseti img{
+  height: 16px;
+  width: 16px;
+
+  }
+  .socseti-cur{
+  font-weight:  800;
+  font-size: 10px;
+  opacity:.9;
+  font-style:italic;
+}
+}
+
+
+@media (max-width: 800px){ 
+  
+
+
+} 
+}
+</style>
